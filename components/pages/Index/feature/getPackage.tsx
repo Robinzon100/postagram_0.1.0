@@ -62,7 +62,6 @@ const getPackage = ({ toggle }: Package) => {
                         <Spacer y={0.5} />
                         <Slider
                             value={kilogram}
-                            initialValue={20}
                             onChange={(value) => setKilogram(value)} />
                     </div>
 
