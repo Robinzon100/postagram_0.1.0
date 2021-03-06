@@ -45,6 +45,14 @@ body {
 
     * {
         font-family: 'georgian', 'Inter' !important;
+        ::-moz-selection { 
+            background: var(--primary-yellow) !important;
+            color: white
+        }
+        ::selection { 
+            background: var(--primary-yellow) !important; 
+            color: white
+        }
     }
 
     p {
@@ -52,6 +60,7 @@ body {
     }
 }
 
+ 
 .about .service {
     margin: 10vw 0 !important;
 }
@@ -65,7 +74,7 @@ ol[class] {
 }
 
 li {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
     font-size: 0;
     line-height: 0;
 }
