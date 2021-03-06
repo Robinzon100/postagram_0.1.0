@@ -1,0 +1,117 @@
+:root {
+  --package-padding: 1.8rem 1.8rem 1.8rem 1rem;
+}
+
+.get-package {
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+  z-index: 100;
+
+  .get-package_container {
+    position: relative;
+    padding: 1.5vw 6vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    background: rgba(234, 234, 234, 0.23);
+    box-shadow: inset 0px -3px 5px rgba(255, 255, 255, 0.25),
+      inset 0px 14px 32px rgba(255, 255, 255, 0.69);
+    backdrop-filter: blur(29px);
+    border-radius: 28px;
+    width: 87%;
+    margin: 0 auto;
+
+    .package_search {
+      display: none;
+    }
+
+    .get-package_inputs {
+      user-select: none !important;
+      padding: var(--package-padding) !important;
+      border: none !important;
+      width: 85%;
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.03),
+        0px 9px 23px -6px rgba(0, 0, 0, 0.1),
+        inset 0px -3px 8px -4px rgba(0, 0, 0, 0.1);
+
+      .placeholder {
+        font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1900 - 700))) !important;
+      }
+
+
+      *{
+        font-size: $f-size-p4;
+        font-weight: $f-weight-light;
+      }
+    }
+
+    .input_cost {
+      margin-left: calc(2rem + 1vw);
+
+      .input {
+        .input-wrapper {
+          padding: var(--package-padding) !important;
+          border: none !important;
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.03),
+            0px 9px 23px -6px rgba(0, 0, 0, 0.1),
+            inset 0px -3px 8px -4px rgba(0, 0, 0, 0.1) !important;
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+@media screen and (max-width: $medium-screen) {
+  .get-package {
+    bottom: 12vh !important;
+    position: fixed;
+
+    .get-package_container {
+      grid-template-columns: initial !important;
+      grid-template-rows: repeat(5, 1fr) !important;
+      gap: 10px 0 !important;
+      background: rgb(240, 240, 240) !important;
+      padding: 4vw 10vw !important;
+
+      .input_cost {
+        margin-left: initial !important;
+
+        .input {
+          .input-wrapper {
+            padding: 1.3rem 1.3rem 1.3rem .8rem !important;
+          }
+        }
+      }
+
+      .get-package_inputs {
+        width: 100% !important;
+        padding: 1.3rem 1.3rem 1.3rem .8rem !important;
+      }
+
+      .package_search {
+        display: block;
+        padding: 10px 30px;
+
+        p {
+          color: white;
+          text-align: center;
+        }
+      }
+    }
+
+    .display_package_none {
+      display: none;
+    }
+
+    .display_package_block {
+      display: grid;
+    }
+
+  }
+}

@@ -1,0 +1,120 @@
+.contact {
+//   height: 65vh;
+  width: 100%;
+  position: relative;
+  margin-bottom: calc(2rem + 1vh);
+
+  .contact_container {
+    width: 40%;
+    margin: 0 auto;
+
+    .heading {
+      display: flex;
+      align-items: center;
+      margin: 0 0 calc(4rem + 4vw) 0;
+    }
+
+    .contact_form {
+
+      .name,.email,.message {
+        width: 100%;
+        p {
+          margin-bottom: calc(0.8rem + 0.5vw);
+        }
+      }
+      .name_email {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+
+        .input {
+          padding: 1rem 7rem 1rem 1.5rem;
+          outline: none;
+          border: none;
+          background: #ffffff;
+          width: 100%;
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.03),
+            0px 9px 23px -6px rgba(0, 0, 0, 0.1),
+            inset 0px -3px 8px -4px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+        }
+
+        .email {
+          margin-left: 2rem;
+        }
+      }
+
+      .message {
+        margin:calc(1rem + .5vw) 0; 
+        }
+
+      
+    }
+
+    .message {
+      .wrapper {
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.03),
+          0px 9px 23px -6px rgba(0, 0, 0, 0.1),
+          inset 0px -3px 8px -4px rgba(0, 0, 0, 0.1) !important;
+        border: none !important;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: $large-screen) {
+  .contact .contact_container {
+    width: 60% !important;
+  }
+}
+
+
+
+@media screen and (max-width: $large-screen) {
+  .contact .contact_container {
+    width: initial !important;
+    padding: var(--body-padding);
+  }
+}
+
+
+
+@media screen and (max-width: $ultra-small-screen) {
+  .contact {
+    height: initial !important;
+
+    .contact_container {
+      .heading {
+        margin: 0 0 calc(2rem + 4vw) 0;
+      }
+
+      .contact_form {
+        .name_email {
+          flex-direction: column !important;
+        }
+
+        .name {
+          margin-bottom: 2rem;
+        }
+
+        .name,.email,.message {
+
+          p {
+            margin-bottom: calc(0.8rem + 0.5vw);
+          }
+        }
+
+        .email {
+          margin: initial !important;
+        }
+      }
+    }
+  }
+}

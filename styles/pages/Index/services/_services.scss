@@ -1,0 +1,191 @@
+.service_btn_active {
+    background: var(--primary-yellow) !important;
+    box-shadow: 0px 40px 57px -27px var(--primary-yellow), inset 0px -3px 15px rgba(255, 150, 0, 0.41), inset 0px 14px 32px rgba(251, 240, 226, 0.76) !important;
+}
+
+.services {
+
+    .services_container {
+        // height: 115vh;
+        min-height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-auto-columns: 1fr 1fr;
+        grid-template-rows: auto auto 1fr;
+        padding: 5vw 7vw;
+        gap: 80px 0;
+
+        .heading {
+            @include f-c-s(center, center);
+        }
+
+        .services_btns {
+            width: 100%;
+            // @include f-c-s(center,space-between);
+            display: grid;
+            gap: 30px 30px;
+            justify-content: center;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas:
+                "th0  th1"
+                "th2  th3";
+
+            .th0 {grid-area: th0;}
+
+            .th1 {grid-area: th1;}
+
+            .th2 {grid-area: th2;}
+
+            .th3 {grid-area: th3;}
+
+            .btn {
+                // background-color: var(--primary-white);
+                background-color: white;
+                box-shadow: 1.93494e-15px 56px 47px -24px rgba(51, 51, 51, 0.05), inset -4.47187e-16px -9px 8px rgba(244, 244, 244, 0.85), inset 4.47187e-16px 7.30311px 7.30311px #FFFFFF;
+                border-radius: 28px;
+                border: none;
+                outline: none;
+                padding: 1.5rem .5rem;
+                width: 30rem;
+                @include f-c-s(center, space-evenly);
+                cursor: pointer;
+
+
+
+
+                p {
+                    width: 60%;
+                    text-align: left;
+                }
+            }
+
+            .icon {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 5rem;
+                height: 5rem;
+                border-radius: 12px;
+                margin-right: calc(.5rem + .5vw);
+            }
+        }
+
+
+        .services_text {
+            margin: 0 auto;
+            width: 50%;
+
+            p {
+                font-size: $f-size-p4;
+                line-height: 180%;
+                font-weight: $f-weight-light;
+            }
+
+            h1 {
+                font-size: $f-size-h7;
+                font-weight: $f-weight-bold;
+            }
+
+
+            ul {
+                padding: 0 1.5vw 0vw 0vw;
+
+                li {
+                    height: auto;
+
+                    &:not(:first-child) {
+                        margin: calc(1.3rem + 1vw) 0rem 0rem 0;
+                    }
+
+                    p {
+                        font-size: $f-size-p5;
+                        font-weight: $f-weight-light;
+                    }
+
+                    h1 {
+                        font-size: $f-size-p4;
+                        font-weight: $f-weight-bold;
+                    }
+
+                    text-decoration: none;
+                    list-style-type: none;
+                    @include f-c-s(center, space-between);
+                }
+            }
+
+        }
+    }
+}
+
+
+
+@media screen and (max-width: $large-screen) {
+    .services {
+        .services_container {
+            .services_btns {
+                .btn {
+                    width: 33vw !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: $medium-screen) {
+    .services {
+        .services_container {
+            .services_btns {
+                .btn {
+                    width: 25rem !important;
+                }
+            }
+            .services_text {
+                width: 100% !important;
+
+                ul {
+                    width: 95%;
+                }
+            }
+
+            .services_btns {
+                grid-template-areas: "th0" "th1" "th2 "  "th3" !important;
+
+                .btn {
+                    &:not(:last-child) {
+                        margin: 0 0rem calc(1.3rem + 1vw) 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $small-screen) {
+    .services {
+        .services_container {
+            padding: 12vw 7vw !important;
+
+            .services_text {
+
+                ul {
+                    width: 100% !important;
+                }
+            }
+
+            .heading {
+                justify-content: initial !important;
+            }
+
+            .services_btns {
+
+                .btn {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@media screen and (max-width: 1080px) {
+
+    .navigation_main .container {
+        height: calc(2vw + 5.5rem) !important;
+        padding: var(--medium-screen-padding) !important;
+    }
+}

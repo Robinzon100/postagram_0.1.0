@@ -1,0 +1,57 @@
+@media only screen and (max-width: $medium-screen) {
+    .landing {
+        .contact_message {
+            left: 9% !important;
+
+        }
+
+    }
+
+
+}
+
+@media only screen and (max-width: $small-screen) {
+
+    .landing {
+        height: 73vh;
+
+        background: {
+            image: url("/pictures/mobile_hero.jpg");
+            size: contain;
+            position: center;
+            repeat: no-repeat;
+        }
+
+        .landing_container {
+            padding: var(--small-screen-padding) !important;
+        }
+
+        .contact_message {
+            left: 9% !important;
+
+            .paragraph {
+                width: 46% !important;
+            }
+        }
+
+    }
+
+    .contact_message {
+        display: none !important;
+    }
+
+    .mobile_contact_message {
+        margin: 6rem 0rem 3rem 0rem;
+        display: block !important;
+
+        padding: var(--small-screen-padding) !important;
+
+        .paragraph {
+            margin-top: 2rem;
+        }
+
+
+    }
+
+
+}

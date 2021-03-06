@@ -1,0 +1,32 @@
+:root {
+    //! MAIN-COLORS
+    --secondary-dark-blue: #0b6bd7;
+    --primary-blue: #338eff;
+    --secondary-light-blue: #4b9bfe;
+
+
+    --secondary-dark-yellow: #e7b604;
+    --primary-yellow: #F39E1F;
+    --secondary-light-yellow: #fce984;
+
+
+    --primary-white: white;
+    --primary-black:#000000;
+
+
+    //*===SIZES
+    --primary-padding: 0vw 7vw;
+    --medium-screen-padding: 0vw 5vw;
+    --small-screen-padding: 0vw 3vw;
+    --body-padding:0 3vw 0 5vw;
+
+    --large-screen:1486px;
+    --medium-screen:1086px;
+    --small-screen:786px;
+    --ultra-small-screen:486px;
+}
+
+$large-screen:1486px;
+$medium-screen:1186px;
+$small-screen:786px;
+$ultra-small-screen:486px;

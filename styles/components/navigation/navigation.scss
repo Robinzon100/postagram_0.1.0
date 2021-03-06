@@ -1,0 +1,134 @@
+
+:root {
+    --nav-heigth:calc(2vw + 3.5rem) !important;
+}
+
+.navigation {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+
+  .navigation_container {
+    width: 100%;
+    padding: var(--primary-padding);
+    height: calc(2vw + 9.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // background-color: #F3F3F3;
+    background: linear-gradient(180deg, #FFFFFF 50.26%, rgba(255, 255, 255, 0) 100%);
+
+    .logo {
+      width: calc(15rem + 10vw);
+      padding: 4rem;
+      background-image: url("/svg/logo.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .hamburger_container {
+      .nav_links {
+        display: flex;
+        align-items: center;
+
+        .nav_items {
+          &:not(:first-child) {
+            margin: 0rem 0rem 0rem calc(1rem + 0.7vw);
+          }
+
+          a {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-size: $f-size-p4;
+            font-weight: $f-weight-light;
+          }
+          a:hover {
+            color: #353535;
+          }
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: $large-screen) {
+  .navigation {
+    .navigation_container {
+      padding: var(--medium-screen-padding);
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen) {
+  .navigation {
+    .navigation_container {
+      height: var(--nav-heigth);
+      background-color: var(--primary-white);
+
+      .logo {
+        width: calc(11rem + 10vw) !important;
+      }
+
+      .hamburger_container {
+        position: absolute;
+        top: var(--nav-heigth);
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-white);
+        height: auto;
+
+        .nav_links {
+          flex-direction: column;
+
+          .nav_items {
+            margin: 4vh 0vh !important;
+          }
+        }
+
+        .menu_none {
+          display: none;
+        }
+        .menu_block {
+            display: flex;
+          }
+      }
+      .hamburger {
+        width: calc(2rem + 1vw);
+        padding: 2rem;
+        background-image: url("/svg/humburger.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen) {
+  .navigation {
+    .navigation_container {
+        height: calc(2vw + 3.5rem) !important;
+      .logo {
+        width: calc(9rem + 9vw) !important;
+      }
+
+      .hamburger {
+        padding: 1rem !important;
+        width: calc(2rem + 1vw);
+      }
+    }
+  }
+}

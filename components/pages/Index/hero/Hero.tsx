@@ -1,0 +1,100 @@
+import { motion } from "framer-motion";
+import { ArrowRight } from "react-feather";
+import { useState,useEffect } from "react";
+
+
+import GetPackage from "components/pages/Index/feature/getPackage";
+import Button from "components/lib/Button/Button";
+
+
+
+const Hero = () => {
+ const [videoSource, setVideoSource] = useState<string>("");
+
+ 
+  useEffect(() => {
+      if (window.innerWidth > 1080) {
+        setVideoSource("/videos/animation.mp4")
+      }else {
+        setVideoSource("/videos/for_mobile.mp4")
+      }
+  }, [])
+
+
+  const [value, setValue] = useState<string>("")
+  const handler = (e) => {
+    setValue(e.target.value)
+    console.log(e.target.value)
+  }
+
+
+  const [toggleCalc, setToggleCalc] = useState(false);
+
+  return (
+    <>
+      <section className="hero">
+        <div className="container">
+
+          <div className="content">
+            <motion.h1
+              animate={{ opacity: 1, y: 15 }}
+              transition={{ duration: 0.4, delay: 2.0 }}
+              className="f-size-h1 f-weight-bl heading">
+              ჩვენი გამოცდილება <br /> თქვენი  უპირატესობაა 
+            </motion.h1>
+
+
+            <motion.p
+              animate={{ opacity: 0.7, y: 15 }}
+              transition={{ duration: 0.4, delay: 2.3 }}
+              className="f-size-p2 f-weight-l paragraph">
+              ჩვენი გუნდი მზადაა უპასუხოს <br /> თქვენს ნებისმიერ შეკითხვას.
+            </motion.p>
+
+
+            <motion.div
+              animate={{ opacity: 1, y: 15 }}
+              transition={{ duration: 0.4, delay: 2.6 }}
+              className="hero_input">
+              <div className="hero_input-container">
+
+                <input 
+                    value={value} 
+                    placeholder='გზავნილის კოდი'
+                    type="text"  
+                    onChange={handler}                
+                    className="input"
+                    name="search"
+                />
+
+                <Button size="small" width="100%" color="yellow" className="hero_btn">
+                    <p className="f-size-p2 f-weight-bo">ძებნა</p>
+
+                                    
+                <ArrowRight
+                      className="arrow-right"
+                      color={"white"}
+                      style={{ opacity: "0.55" }}
+                      strokeWidth={2.4}
+                    />
+                </Button>
+
+              </div>
+            </motion.div>
+            </div>
+
+        <div className="mobile_package" onClick={() => setToggleCalc((toggleCalc) => !toggleCalc)}></div>
+
+            <GetPackage toggle={toggleCalc}/> 
+            
+            
+            <div className="backgound_video__container">
+            <video autoPlay muted src={videoSource}></video>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Hero;
