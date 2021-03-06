@@ -24,51 +24,6 @@ export const getPackage = async (trackingNumber) => {
 
 
 
-
-
-    //         $.ajax({
-    //             type: 'GET',
-    //             url: _baseUrl + 'orders?trackingNumber=4787',
-    //             headers: {
-    //                 'Authorization': _apiKey
-    //             },
-    //             success: function (response) {
-    //                 $.ajax({
-    //                     type: 'GET',
-    //                     url: _baseUrl + 'orders/' + response,
-    //                     headers: {
-    //                         'Authorization': _apiKey
-    //                     },
-    //                     success: function (response) {
-    //                         console.log(response)
-    //                         response['Description'] += 'Customer Reference# 614852';
-    //                         $.ajax({
-    //                             type: 'POST',
-    //                             url: _baseUrl + 'order/post',
-    //                             contentType: 'application/json',
-    //                             data: JSON.stringify(response),
-    //                             dataType: 'json',
-    //                             headers: {
-    //                                 'Authorization': _apiKey
-    //                             },
-    //                             success: function (response) {
-    //                                 $('#lblStatus').html('Successfully updated the order!');
-    //                             }
-    //                         });
-    //                     },
-    //                     error: function (response) {
-    //                         $('#lblStatus').html('An error has occurred: No order with tracking number 4787.');
-    //                     }
-    //                 });
-    //             },
-    //             error: function (response) {
-    //                 $('#lblStatus').html('An error has occurred: No order with tracking number 4787.');
-    //             }
-    //         });
-    //     } catch (error) {
-    //         $('#lblStatus').html('An error has occurred: ' + error.message);
-    //     }
-    // });
 }
 
 

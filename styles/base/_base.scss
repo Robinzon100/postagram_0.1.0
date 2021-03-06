@@ -10,7 +10,7 @@ ol[class] {
     padding: 0;
 }
 
-.main{
+.main {
     margin-top: 6rem;
 }
 
@@ -42,16 +42,37 @@ body {
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     box-sizing: border-box;
-    font-family: 'georgian', 'Inter';
+
+    * {
+        font-family: 'georgian', 'Inter' !important;
+    }
+
+    p {
+        margin: 0;
+    }
 }
-.about .service{
+
+.about .service {
     margin: 10vw 0 !important;
 }
 
 
 ul[class],
 ol[class] {
-    list-style: none;
+    list-style: none !important;
+    list-style-type: none !important;
+    text-decoration: none !important;
+}
+
+li {
+    margin-bottom: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+li::before {
+    display: none !important;
+
 }
 
 a:not([class]) {
@@ -76,7 +97,7 @@ select {
 }
 
 img:not([alt]) {
-  filter: blur(10px);
+    filter: blur(10px);
 }
 
 // @media (prefers-reduced-motion: reduce) {
@@ -85,6 +106,6 @@ img:not([alt]) {
 //         animation-iteration-count: 1 !important;
 //         transition-duration: 0.01ms !important;
 //         scroll-behavior: auto !important;
-        
+
 //     }
 // }

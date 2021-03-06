@@ -1,8 +1,9 @@
 import Head from "next/head";
-import { GeistProvider} from "@geist-ui/react";
-import "../styles/main.scss";
+import { GeistProvider, CssBaseline } from "@geist-ui/react";
 import "mapbox-gl/dist/mapbox-gl.css"
 import Navigation from "components/global/naviagtion/Navigation";
+import "../styles/main.scss";
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -41,8 +42,8 @@ function MyApp({ Component, pageProps }) {
         />
         <meta property="twitter:image" content="/meta_images/og_image.png" /> */}
 
-        
-        <link rel="shortcut icon" href="#"/>
+        <link rel="stylesheet" href="node_modules/@geist-ui/react/dist/css-baseline.js" />
+        <link rel="shortcut icon" href="#" />
         <meta name="viewport" content="height=device-height, 
                       width=device-width, initial-scale=1.0, 
                       minimum-scale=1.0, maximum-scale=1.0, 
@@ -50,6 +51,8 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <GeistProvider>
+        <CssBaseline />
+
         <Navigation />
         <Component {...pageProps} />
       </GeistProvider>

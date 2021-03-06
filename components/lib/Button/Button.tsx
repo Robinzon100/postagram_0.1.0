@@ -23,7 +23,7 @@ const Button: FC<buttonInterface> = ({
 }) => {
   return (
     <>
-      <div className={`btn ${className}`} style={style} onClick={onClick} id={id}>
+      <div className={`button ${className}`} style={style} onClick={onClick} id={id}>
         {children}
 
       </div>
@@ -34,7 +34,7 @@ const Button: FC<buttonInterface> = ({
 
 
       <style jsx>{`
-        .btn {
+        .button {
         //   margin-left: 8px;
           display: inline-flex;
           flex-direction: row;
@@ -51,7 +51,7 @@ const Button: FC<buttonInterface> = ({
           border: ${color ? colorStyles[color].border : defaultStyles.border};
         }
 
-        .btn p {
+        .button p {
           color: var(--primary-white);
         }
       `}</style>
