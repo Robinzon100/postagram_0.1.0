@@ -17,29 +17,17 @@ const getPackage = ({ toggle }: { toggle: boolean }) => {
     const [zoneIndex, setZoneIndex] = useState<number>(0)
 
 
-
-
     useEffect(() => {
-        if (!zones[0][0].includes(from)) {
-            zones[1].includes(from) ? setZoneIndex(1) : setZoneIndex(2)
-        }
-        if (!zones[0][0].includes(to)) {
-            zones[1].includes(to) ? setZoneIndex(1) : setZoneIndex(2)
-        }
-
+        if (!zones[0][0].includes(from)) zones[1].includes(from) ? setZoneIndex(1) : setZoneIndex(2)
+        if (!zones[0][0].includes(to)) zones[1].includes(to) ? setZoneIndex(1) : setZoneIndex(2)
         to == zones[0][0] && from == zones[0][0] && setZoneIndex(0)
 
-
         calculate()
-
     }, [to, from, kilogram])
-
-
 
     useEffect(() => {
         calculate()
     }, [zoneIndex])
-
 
 
     const sliderHandler = val => {
