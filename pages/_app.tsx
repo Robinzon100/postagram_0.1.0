@@ -42,7 +42,6 @@ function MyApp({ Component, pageProps }) {
         />
         <meta property="twitter:image" content="/meta_images/og_image.png" /> */}
 
-        <link rel="stylesheet" href="node_modules/@geist-ui/react/dist/css-baseline.js" />
         <link rel="shortcut icon" href="#" />
         <meta name="viewport" content="height=device-height, 
                       width=device-width, initial-scale=1.0, 
