@@ -2,14 +2,14 @@ import { Select, Slider, Input, Spacer } from "@geist-ui/react";
 import { useState, useEffect } from "react";
 
 
-interface Package {
-    toggle: boolean
-}
+
+import { calcPrices, zones, kilogramSteps, everyZone } from "./feature.data";
 
 
 
 
-const getPackage = ({ toggle }: Package) => {
+
+const getPackage = ({ toggle }: { toggle: boolean }) => {
     const [cost, setCost] = useState<number>(0)
     const [kilogram, setKilogram] = useState<number>(0)
     const [from, setFrom] = useState("");
@@ -17,39 +17,6 @@ const getPackage = ({ toggle }: Package) => {
     const [zoneIndex, setZoneIndex] = useState<number>(0)
 
 
-    const calcPrices = [
-        [
-            4,
-            5,
-            7,
-            10
-        ],
-        [
-            7,
-            9,
-            12,
-            17
-        ],
-        [
-            10,
-            13,
-            18,
-            20
-        ],
-    ]
-
-    const zones = [
-        ['თბილისი'],
-        ["გორი", "ხაშური", "ზესტაფონი", "ქუთაისი", "სენაკი", "სამტრედია", "ფოთი", "ბათუმი", "ბორჯომი", "ახალციხე", "რუსთავი", "თელავი", "ზუგდიდი"],
-        ["ახმეტა", "წნორი", "დედოფლისწყარო", "დუშეთი", "თიანეთი", "ყაზბეგი", "ფასანაური", "გუდაური", "თეთრიწყარო", "მანგლისი", "წალკა", "კასპი", "ქარელი", "აგარა", "ბაკურიანი", "წაღვერი", "ადიგენი", "აბასთუმანი", "ასპინძა", "ახალქალაქი", "ნინოწმინდა", "ხარაგაული", "ტყიბული", "საჩხერე", "ჭიათურა", "თერჯოლა", "ბაღდათი", "ვანი", "ხონი", "წყალტუბო", "ამბროლაური", "ცაგერი", "ლენტეხი", "ონი", "ჩაქვი", "ურეკი", "მახინჯაური", "ხელვაჩაური", "ქედა", "მარტვილი", "ჩხოროწყუ", "ხობი", "წალენჯიხა"]
-    ]
-
-
-    const kilogramSteps: number[] = [3, 10, 20, 30]
-
-
-
-    const everyZone = [...zones[0], ...zones[1], ...zones[2]].sort(Intl.Collator().compare);
 
 
     useEffect(() => {
