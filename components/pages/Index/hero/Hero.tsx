@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "react-feather";
+import { ArrowRight} from "react-feather";
 import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic'
 
@@ -83,7 +83,11 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="mobile_package" onClick={() => setToggleCalc((toggleCalc) => !toggleCalc)}></div>
+          <div className="mobile_package" 
+          style={toggleCalc ? {backgroundImage:"url(/svg/x-circle.svg)"} : {}} 
+          onClick={() => setToggleCalc((toggleCalc) => !toggleCalc)}>
+
+          </div>
 
           <GetPackage toggle={toggleCalc} />
 
