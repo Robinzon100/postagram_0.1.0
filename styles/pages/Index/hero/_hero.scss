@@ -5,7 +5,7 @@
 
   .container {
     position: relative;
-    // z-index:12;
+    z-index:7;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -82,7 +82,7 @@
       width: 100%;
 
       video {
-        z-index: 3;
+        z-index:-1;
         position: absolute;
         top: 50%;
         left: 50%;
