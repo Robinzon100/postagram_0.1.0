@@ -39,7 +39,7 @@ const Service = () => {
 
   return (
     <>
-      <section className="services">
+      <section className="services" id='services'>
         <div className="services_container">
           <div className="heading">
             <Cube />

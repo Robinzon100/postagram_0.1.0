@@ -15,22 +15,22 @@ const Navigation = () => {
           <div className="hamburger_container">
             <ul className={!isOpen ?  "menu_none nav_links" : "nav_links menu_block"}>
               <li className="nav_items">
-                <a href="#">სერვისები</a>
+                <a href="#services">სერვისები</a>
               </li>
               <li className="nav_items">
-                <a href="#">ჩვენს შესახებ</a>
-              </li>
-
-              <li className="nav_items">
-                <a href="#">ოფისები</a>
+                <a href="#about">ჩვენს შესახებ</a>
               </li>
 
               <li className="nav_items">
-                <a href="#">კითხვები</a>
+                <a href="#offices">ოფისები</a>
               </li>
 
               <li className="nav_items">
-                <a href="#">კონტაქტი</a>
+                <a href="#questions">კითხვები</a>
+              </li>
+
+              <li className="nav_items">
+                <a href="#contact">კონტაქტი</a>
               </li>
             </ul>
           </div>

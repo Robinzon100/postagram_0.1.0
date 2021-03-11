@@ -4,7 +4,7 @@ import Cube from "components/global/cube/Cube";
 const About = () => {
   return (
     <>
-      <section className="about">
+      <section className="about" id='about'>
         <div className="about_container">
           <div className="about_us">
 

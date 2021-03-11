@@ -1,15 +1,20 @@
 import { motion } from "framer-motion";
-import { ArrowRight} from "react-feather";
+import { ArrowRight } from "react-feather";
 import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic'
 
 // import GetPackage from "components/pages/Index/feature/getPackage";
 import Button from "components/lib/Button/Button";
+import { Modal } from "@geist-ui/react";
 
 const GetPackage = dynamic(() => import('components/pages/Index/feature/getPackage'))
 
 const Hero = () => {
   const [videoSource, setVideoSource] = useState<string>("");
+  const [toggleCalc, setToggleCalc] = useState(false);
+  const [value, setValue] = useState<string>("")
+  const [modelOpen, setModelOpen] = useState(false)
+
 
 
   useEffect(() => {
@@ -20,21 +25,25 @@ const Hero = () => {
     }
   }, [])
 
-
-  const [value, setValue] = useState<string>("")
   const handler = (e) => {
     setValue(e.target.value)
     console.log(e.target.value)
   }
 
 
-  const [toggleCalc, setToggleCalc] = useState(false);
 
   return (
     <>
       <section className="hero">
+        <Modal open={modelOpen} onClose={() => setModelOpen(false)}>
+          <Modal.Content>
+            <p className="f-size-p3 f-weight-l">თქვენი ამანათის სტატუსი: <span> </span> 
+              <span className='f-size-p3 f-weight-bl'>საწყობშია</span>
+            </p>
+          </Modal.Content>
+          <Modal.Action passive onClick={() => setModelOpen(false)}>დახურვა</Modal.Action>
+        </Modal>
         <div className="container">
-
           <div className="content">
             <motion.h1
               animate={{ opacity: 1, y: 15 }}
@@ -61,13 +70,14 @@ const Hero = () => {
                 <input
                   value={value}
                   placeholder='გზავნილის კოდი'
-                  type="text"
+                  type="number"
                   onChange={handler}
                   className="input"
                   name="search"
+                  max={9999}
                 />
 
-                <Button size="small" width="100%" color="yellow" className="hero_btn">
+                <Button onClick={() => setModelOpen(true)} size="small" width="100%" color="yellow" className="hero_btn">
                   <p className="f-size-p2 f-weight-bo">ძებნა</p>
 
 
@@ -83,9 +93,9 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="mobile_package" 
-          style={toggleCalc ? {backgroundImage:"url(/svg/x-circle.svg)"} : {}} 
-          onClick={() => setToggleCalc((toggleCalc) => !toggleCalc)}>
+          <div className="mobile_package"
+            style={toggleCalc ? { backgroundImage: "url(/svg/x-circle.svg)" } : {}}
+            onClick={() => setToggleCalc((toggleCalc) => !toggleCalc)}>
 
           </div>
 

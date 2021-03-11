@@ -12,7 +12,7 @@ const Offices = () => {
 
   return (
     <>
-      <div className="offices">
+      <div className="offices" id='offices'>
         <div className="offices_container">
           <div className="heading">
 

@@ -26,6 +26,8 @@
       display: none;
     }
 
+    // .input_kilograms{
+    // }
     .get-package_inputs {
       user-select: none !important;
       padding: var(--package-padding) !important;
@@ -40,7 +42,7 @@
       }
 
 
-      *{
+      * {
         font-size: $f-size-p4;
         font-weight: $f-weight-light;
       }
@@ -48,6 +50,10 @@
 
     .input_cost {
       margin-left: calc(2rem + 1vw);
+
+      * {
+        cursor: text !important;
+      }
 
       .input {
         .input-wrapper {
@@ -71,14 +77,14 @@
   .get-package {
     bottom: 18vh !important;
     position: fixed;
-    
+
 
     .get-package_container {
       grid-template-columns: initial !important;
       grid-template-rows: repeat(4, 1fr) !important;
       gap: 10px 0 !important;
-      background: rgba(255, 255, 255,1) !important;
-        box-shadow: 0px 5px 6px rgb(0 0 0 / 11%), 0px 33px 30px rgb(10 9 9 / 13%), inset 0px -14px 26px -13px rgb(0 0 0 / 21%);
+      background: rgba(255, 255, 255, 1) !important;
+      box-shadow: 0px 5px 6px rgb(0 0 0 / 11%), 0px 33px 30px rgb(10 9 9 / 13%), inset 0px -14px 26px -13px rgb(0 0 0 / 21%);
       padding: 6vw 8vw !important;
 
 

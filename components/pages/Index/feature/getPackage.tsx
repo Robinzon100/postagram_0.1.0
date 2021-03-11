@@ -1,8 +1,6 @@
 import { Select, Slider, Input, Spacer } from "@geist-ui/react";
 import { useState, useEffect } from "react";
 
-
-
 import { calcPrices, zones, kilogramSteps, everyZone } from "./feature.data";
 
 
@@ -91,10 +89,19 @@ const getPackage = ({ toggle }: { toggle: boolean }) => {
                     <div className="input_kilograms">
                         <p className='f-size-p4 f-weight-r' style={{ marginBottom: '.5rem' }}>{kilogram}კგ</p>
                         <Spacer y={0.5} />
+                         {/* <Input
+                            className="f-size-p4 f-weight-r input"
+                            status="secondary"
+                            size="large"
+                            placeholder="წონა"
+                            type='number'
+                            value={`${kilogram}`}
+                            onChange={(e) => setKilogram(+e.target.value)} /> */}
                         <Slider
                             step={.1}
+                            style={{width: '100%'}}
                             max={30}
-
+                            value={kilogram}
                             onChange={sliderHandler} />
                     </div>
 
@@ -104,9 +111,9 @@ const getPackage = ({ toggle }: { toggle: boolean }) => {
                         <Spacer y={0.6} />
                         <Input
                             value={`${cost}₾`}
-                            disabled={true}
+                            disabled
                             width="100%"
-                            className="input"
+                            className="f-size-p4 f-weight-r input"
                             status="secondary"
                             size="large"
                             placeholder="ფასი"

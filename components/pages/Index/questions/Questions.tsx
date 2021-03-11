@@ -3,7 +3,7 @@ import Cube from "components/global/cube/Cube";
 const Questions = () => {
   return (
     <>
-      <div className="questions">
+      <div className="questions" id='questions'>
         <div className="questions_container">
           <div className="heading">
             <Cube />
