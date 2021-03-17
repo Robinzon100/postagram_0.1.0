@@ -9,7 +9,7 @@ import HeadAndMeta from "components/global/head/head"
 function MyApp({ Component, pageProps }) {
   return (
     <>
-        <HeadAndMeta/>
+        {/* <HeadAndMeta/> */}
 
       <GeistProvider>
         <CssBaseline />

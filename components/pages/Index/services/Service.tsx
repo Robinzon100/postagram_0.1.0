@@ -9,8 +9,8 @@ import Cube from "components/global/cube/Cube";
 
 const Service = () => {
 
-  const [text, setText] = useState(ServiceText.serviceText);
-  const [btns, setbtns] = useState(ServiceText.serviceBtnText);
+  const [text,] = useState(ServiceText.serviceText);
+  const [btns,] = useState(ServiceText.serviceBtnText);
   const [defaultText, setDefaultText] = useState(true);
   const [displayText, setDisplayText] = useState("");
 
