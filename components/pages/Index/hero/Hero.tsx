@@ -50,7 +50,7 @@ const Hero = () => {
             <motion.h1
               animate={{ opacity: 1, y: 15 }}
               transition={{ duration: 0.4, delay: 2.0 }}
-              className="f-size-h1 f-weight-bl heading">
+              className="f-size-h2 f-weight-bl heading">
               ჩვენი გამოცდილება <br /> თქვენი  უპირატესობაა
             </motion.h1>
 
