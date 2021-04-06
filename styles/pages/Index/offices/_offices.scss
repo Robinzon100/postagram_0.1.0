@@ -40,6 +40,7 @@
         .offices_container{
             grid-template-rows: .2fr 1fr !important;
             padding: var(--body-padding);
+            height: 80vh;
 
             .heading {
                 display: flex;
@@ -49,6 +50,7 @@
     
             .postagram_map {
                 width: 100% !important;
+                height: 70%;
             }
         }
     }
