@@ -1,19 +1,23 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import {NavigationAnimation} from "components/lib/Motion/NavigationAnimation";
+import { NavigationAnimation } from "components/lib/Motion/NavigationAnimation";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const logoClickHandler = () => {
+    scrollTo(0, 0)
+  }
 
   return (
     <>
       <nav className="navigation">
         <div className="navigation_container">
-          <div className="logo" />
+          <div className="logo" onClick={() => logoClickHandler()} />
 
           <div className="hamburger_container">
-            <ul className={!isOpen ?  "menu_none nav_links" : "nav_links menu_block"}>
+            <ul className={!isOpen ? "menu_none nav_links" : "nav_links menu_block"}>
               <li className="nav_items">
                 <a href="#services">სერვისები</a>
               </li>
