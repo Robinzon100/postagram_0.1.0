@@ -67,6 +67,15 @@ const Service = () => {
             {text ? defaultText ? <div>{ReactHtmlParser(text[0])}</div> : <div>{ReactHtmlParser(displayText)}</div> : ""}
 
           </div>
+
+          <div className="goals">
+            <p className="f-size-p2 f-weight-l">
+              ფოსტაგრამის მთავარი მიზანი პარტნიორი კომპანიებისთვის მიტანის
+              სერვისის გამარტივება და დახვეწაა. შესაბამისად, ნებისმიერი
+              დამატებითი საჭიროების შემთხვევაში, მზად ვართ, დავამუშაოთ
+              თქვენი მოთხოვნა და შევქმნათ თქვენზე მორგებული სერვისი.
+            </p>
+          </div>
         </div>
       </section>
     </>

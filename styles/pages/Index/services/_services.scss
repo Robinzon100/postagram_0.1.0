@@ -32,13 +32,21 @@
                 "th0  th1"
                 "th2  th3";
 
-            .th0 {grid-area: th0;}
+            .th0 {
+                grid-area: th0;
+            }
 
-            .th1 {grid-area: th1;}
+            .th1 {
+                grid-area: th1;
+            }
 
-            .th2 {grid-area: th2;}
+            .th2 {
+                grid-area: th2;
+            }
 
-            .th3 {grid-area: th3;}
+            .th3 {
+                grid-area: th3;
+            }
 
             .btn {
                 // background-color: var(--primary-white);
@@ -98,19 +106,24 @@
             }
 
             h1 {
-                font-size: $f-size-h7;
+                font-size: $f-size-h6;
                 font-weight: $f-weight-bold;
             }
 
+            h2 {
+                font-size: $f-size-p1;
+                font-weight: $f-weight-bold;
+            }
 
             ul {
                 padding: 0 1.5vw 0vw 0vw;
+                margin: 5vw 0 0 0 !important;
 
                 li {
                     height: auto;
 
                     &:not(:first-child) {
-                        margin: calc(1.3rem + 1vw) 0rem 0rem 0;
+                        margin: calc(1rem + .5vw) 0rem 0rem 0;
                     }
 
                     p {
@@ -129,6 +142,11 @@
                 }
             }
 
+        }
+
+        .goals{
+            margin: calc(2rem + 5vw) auto 3rem auto;
+            max-width: 45rem;
         }
     }
 }
@@ -160,6 +178,7 @@
                     width: 25rem !important;
                 }
             }
+
             .services_text {
                 width: 100% !important;
 
@@ -169,7 +188,7 @@
             }
 
             .services_btns {
-                grid-template-areas: "th0" "th1" "th2"  "th3" !important;
+                grid-template-areas: "th0""th1""th2""th3" !important;
 
                 .btn {
                     &:not(:last-child) {
