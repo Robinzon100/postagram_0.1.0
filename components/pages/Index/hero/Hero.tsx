@@ -25,15 +25,11 @@ const Hero = () => {
     }
   }, [])
 
+
   const handler = (e) => {
     setValue(e.target.value)
-    console.log(e.target.value)
   }
-
-
-
   
-
   return (
     <>
       <section className="hero">

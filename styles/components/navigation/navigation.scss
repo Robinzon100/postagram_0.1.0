@@ -21,7 +21,7 @@
     background: linear-gradient(180deg, #FFFFFF 50.26%, rgba(255, 255, 255, 0) 100%);
 
     .logo {
-      width: calc(15rem + 10vw);
+      width: calc(12rem + 10vw);
       padding: 4rem;
       background-image: url("/svg/logo_mark.svg");
       background-position: center;
@@ -62,13 +62,13 @@
 
 
 
-@media screen and (max-width: $large-screen) {
-  .navigation {
-    .navigation_container {
-      padding: var(--medium-screen-padding);
-    }
-  }
-}
+// @media screen and (max-width: $large-screen) {
+//   .navigation {
+//     .navigation_container {
+//       padding: var(--medium-screen-padding);
+//     }
+//   }
+// }
 
 @media screen and (max-width: $medium-screen) {
   .navigation {

@@ -8,9 +8,15 @@
   width: 100%;
   z-index: 15;
 
+  
+
+  @media screen and (max-width: $large-screen) {
+        bottom: 5rem !important;
+    }
+
   .get-package_container {
     position: relative;
-    padding: 1.0vw 4vw;
+    padding: .8vw 4vw;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
@@ -68,7 +74,6 @@
     }
   }
 }
-
 
 
 
