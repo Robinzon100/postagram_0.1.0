@@ -21,7 +21,7 @@
     background: linear-gradient(180deg, #FFFFFF 50.26%, rgba(255, 255, 255, 0) 100%);
 
     .logo {
-      width: calc(15rem + 10vw);
+      width: calc(12rem + 10vw);
       padding: 4rem;
       background-image: url("/svg/logo_mark.svg");
       background-position: center;
@@ -31,6 +31,9 @@
     }
 
     .hamburger_container {
+        display: flex;
+        align-items: center;
+
       .nav_links {
         display: flex;
         align-items: center;
@@ -51,6 +54,10 @@
           }
         }
       }
+
+      .select_lang {
+        margin-left: calc(1.5rem + 1vw);
+      }
     }
 
     .hamburger {
@@ -62,13 +69,6 @@
 
 
 
-@media screen and (max-width: $large-screen) {
-  .navigation {
-    .navigation_container {
-      padding: var(--medium-screen-padding);
-    }
-  }
-}
 
 @media screen and (max-width: $medium-screen) {
   .navigation {
@@ -101,7 +101,12 @@
         }
         .menu_block {
             display: flex;
-          }
+            width: 100%;
+        }
+
+        .select_lang {
+            padding-bottom:calc(1rem + 1vw) ;
+        }
       }
       .hamburger {
         width: calc(2rem + 1vw);

@@ -11,23 +11,23 @@ const GetPackage = dynamic(() => import('components/pages/Index/feature/getPacka
 
 const Hero = () => {
   const [videoSource, setVideoSource] = useState<string>("");
-  const [toggleCalc, setToggleCalc] = useState(false);
+  const [toggleCalc, setToggleCalc] = useState<boolean>(false);
   const [value, setValue] = useState<string>("")
-  const [modelOpen, setModelOpen] = useState(false)
+  const [modelOpen, setModelOpen] = useState<boolean>(false)
 
 
 
   useEffect(() => {
     if (window.innerWidth > 1080) {
-      setVideoSource("/videos/animation.mp4")
+      setVideoSource("https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4")
     } else {
-      setVideoSource("/videos/for_mobile.mp4")
+      setVideoSource("https://oxeni-sfs.vercel.app/postagram/videos/for_mobile.mp4")
     }
   }, [])
 
+
   const handler = (e) => {
     setValue(e.target.value)
-    console.log(e.target.value)
   }
 
 

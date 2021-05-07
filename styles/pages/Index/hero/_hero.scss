@@ -2,6 +2,10 @@
   position: relative;
   overflow: hidden;
   height: 100vh;
+  
+    @media screen and (max-width: $large-screen) {
+        height: 56rem !important;
+    }
 
   .container {
     position: relative;
@@ -17,7 +21,6 @@
 
     .content {
       position: absolute;
-      //   z-index: 12;
       margin: -1.8vw 0vw 0vw 7vw;
 
       .paragraph,
@@ -28,7 +31,7 @@
 
       .paragraph {
         line-height: 161.2%;
-        margin: calc(0.5rem + 0.7vw) 0vw calc(0.5rem + 2.3vw) 0vw;
+        margin: calc(0.5rem + 0.5vw) 0vw calc(0.3rem + 1.8vw) 0vw;
       }
 
       .hero_input {
@@ -116,7 +119,6 @@
     }
   }
 }
-
 
 
 

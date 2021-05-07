@@ -87,8 +87,20 @@
             margin: 0 auto;
             width: 50%;
 
+            h5 {
+                font-weight: $f-weight-bold !important;
+                margin-left: 2%;
+                font-size: $f-size-p5;
+            }
+
+            h6 {
+                font-weight: $f-weight-light !important;
+                margin-left: 2%;
+                font-size: $f-size-p6;
+            }
+
             p {
-                font-size: $f-size-p4;
+                font-size: $f-size-p3;
                 line-height: 180%;
                 font-weight: $f-weight-light;
             }
