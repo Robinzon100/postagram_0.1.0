@@ -16,8 +16,7 @@ function MyApp({ Component, pageProps }) {
 
 
   useEffect(() => {
-
-    if (cookies.lang.length > 0) {
+    if (cookies.lang.length > 0 && cookies.lang != 'geo') {
       const translateElements = document.querySelectorAll('[data-translation]')
 
       Array.from(translateElements).map((el: HTMLElement, i) => {

@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import { Select } from "@geist-ui/react";
+import { useCookies } from "react-cookie";
+import { lang } from "components/util/translate.content";
 
 const Navigation = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['lang']);
   const [isOpen, setIsOpen] = useState(false);
 
 
@@ -9,7 +12,38 @@ const Navigation = () => {
     scrollTo(0, 0);
   };
 
-  const handler = (val) => console.log(val);
+
+
+  useEffect(() => {
+
+
+  }, [])
+
+  const changeHtmlLang = (lang) => {
+    setCookie('lang', lang)
+
+    if (cookies.lang.length > 0 && cookies.lang != 'geo') {
+      const translateElements = document.querySelectorAll('[data-translation]')
+
+      Array.from(translateElements).map((el: HTMLElement, i) => {
+        el.innerHTML = lang[cookies.lang].index[el.dataset.translation]
+      })
+
+      const translateGlobalElements = document.querySelectorAll('[data-translation-global]')
+
+      Array.from(translateGlobalElements).map((el: HTMLElement, i) => {
+        el.innerHTML = lang[cookies.lang].global.navigation[el.dataset.translationGlobal]
+      })
+    } 
+  }
+
+
+
+  const handler = (val) => {
+    console.log(val);
+    
+    changeHtmlLang(val)
+  };
 
 
 
@@ -53,7 +87,7 @@ const Navigation = () => {
                     onChange={handler}
                   >
                     <Select.Option value="geo">geo</Select.Option>
-                    <Select.Option value="end">eng</Select.Option>
+                    <Select.Option value="eng">eng</Select.Option>
                     <Select.Option value="rus">rus</Select.Option>
                   </Select>
                 </div>
