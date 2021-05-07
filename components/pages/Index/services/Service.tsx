@@ -1,18 +1,26 @@
-import { useState, Ref } from "react";
+import { useState, Ref, useEffect } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 
 
 
 import ServiceText from "./serviceText.json"
 import Cube from "components/global/cube/Cube";
+import { useCookies } from 'react-cookie';
 
 
 const Service = () => {
-
-  const [text, setText] = useState(ServiceText.serviceText);
-  const [btns, setbtns] = useState(ServiceText.serviceBtnText);
+  const [cookies, setCookie, removeCookie] = useCookies(['lang']);
   const [defaultText, setDefaultText] = useState(true);
   const [displayText, setDisplayText] = useState("");
+  const language = cookies.lang
+  const [text, setText] = useState([])
+  const [btns, setBtns] = useState([])
+
+  useEffect(() => {
+    setText(ServiceText[language].serviceText);
+    setBtns(ServiceText[language].serviceBtnText);
+  }, [])
+
 
   const getText = (e) => {
     if (e.currentTarget.attributes["data-title"]) {
@@ -43,7 +51,9 @@ const Service = () => {
         <div className="services_container">
           <div className="heading">
             <Cube />
-            <h1 className="f-size-h2 f-weight-bl">სერვისები</h1>
+            <h1
+              className="f-size-h2 f-weight-bl"
+              data-translation='service_title'>სერვისები</h1>
           </div>
 
           <div className="services_btns">
@@ -56,7 +66,7 @@ const Service = () => {
                   getText(e);
                   setDefaultText(false);
                 }}>
-                <div className="icon" style={{ backgroundImage: `url("/svg/${btnText}.svg")` }}></div>
+                <div className="icon" style={{ backgroundImage: `url("/svg/${i+1}.svg")` }}></div>
                 <p className="f-size-p5 f-weight-bl">{btnText}</p>
               </button>
 
@@ -69,7 +79,8 @@ const Service = () => {
           </div>
 
           <div className="goals">
-            <p className="f-size-p2 f-weight-l">
+            <p className="f-size-p2 f-weight-l"
+              data-translation='service_description'>
               ფოსტაგრამის მთავარი მიზანი პარტნიორი კომპანიებისთვის მიტანის
               სერვისის გამარტივება და დახვეწაა. შესაბამისად, ნებისმიერი
               დამატებითი საჭიროების შემთხვევაში, მზად ვართ, დავამუშაოთ

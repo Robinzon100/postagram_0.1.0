@@ -1,14 +1,15 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-
-import { NavigationAnimation } from "components/lib/Motion/NavigationAnimation";
+import { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+
   const logoClickHandler = () => {
     scrollTo(0, 0)
   }
+
+
 
   return (
     <>
@@ -19,22 +20,22 @@ const Navigation = () => {
           <div className="hamburger_container">
             <ul className={!isOpen ? "menu_none nav_links" : "nav_links menu_block"}>
               <li className="nav_items">
-                <a href="#services">სერვისები</a>
+                <a data-translation-global='services' href="#services">სერვისები</a>
               </li>
               <li className="nav_items">
-                <a href="#about">ჩვენს შესახებ</a>
-              </li>
-
-              <li className="nav_items">
-                <a href="#offices">ოფისები</a>
+                <a data-translation-global='about_us' href="#about">ჩვენს შესახებ</a>
               </li>
 
               <li className="nav_items">
-                <a href="#questions">კითხვები</a>
+                <a data-translation-global='offices' href="#offices">ოფისები</a>
               </li>
 
+              {/* <li className="nav_items">
+                <a data-translation-global='questions' href="#questions">კითხვები</a>
+              </li> */}
+
               <li className="nav_items">
-                <a href="#contact">კონტაქტი</a>
+                <a data-translation-global='contact' href="#contact">კონტაქტი</a>
               </li>
             </ul>
           </div>

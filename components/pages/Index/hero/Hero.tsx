@@ -32,14 +32,14 @@ const Hero = () => {
 
 
 
-  
+
 
   return (
     <>
       <section className="hero">
         <Modal open={modelOpen} onClose={() => setModelOpen(false)}>
           <Modal.Content>
-            <p className="f-size-p3 f-weight-l">თქვენი ამანათის სტატუსი: <span> </span> 
+            <p className="f-size-p3 f-weight-l">თქვენი ამანათის სტატუსი: <span> </span>
               <span className='f-size-p3 f-weight-bl'>საწყობშია</span>
             </p>
           </Modal.Content>
@@ -50,7 +50,8 @@ const Hero = () => {
             <motion.h1
               animate={{ opacity: 1, y: 15 }}
               transition={{ duration: 0.4, delay: 2.0 }}
-              className="f-size-h1 f-weight-bl heading">
+              className="f-size-h1 f-weight-bl heading"
+              data-translation='hero_title'>
               ჩვენი გამოცდილება <br /> თქვენი  უპირატესობაა
             </motion.h1>
 
@@ -58,7 +59,8 @@ const Hero = () => {
             <motion.p
               animate={{ opacity: 0.7, y: 15 }}
               transition={{ duration: 0.4, delay: 2.3 }}
-              className="f-size-p2 f-weight-l paragraph">
+              className="f-size-p2 f-weight-l paragraph"
+              data-translation='hero_description'>
               ჩვენი გუნდი მზადაა უპასუხოს <br /> თქვენს ნებისმიერ შეკითხვას.
             </motion.p>
 
@@ -71,7 +73,7 @@ const Hero = () => {
 
                 <input
                   value={value}
-                  placeholder='გზავნილის კოდი'
+                  placeholder='tracking number'
                   type="number"
                   onChange={handler}
                   className="input"
@@ -80,15 +82,14 @@ const Hero = () => {
                 />
 
                 <Button onClick={() => setModelOpen(true)} size="small" width="100%" color="yellow" className="hero_btn">
-                  <p className="f-size-p2 f-weight-bo">ძებნა</p>
-
-
+                  <p 
+                    className="f-size-p2 f-weight-bo"
+                    data-translation='hero_button'>ძებნა</p>
                   <ArrowRight
                     className="arrow-right"
                     color={"white"}
                     style={{ opacity: "0.55" }}
-                    strokeWidth={2.4}
-                  />
+                    strokeWidth={2.4} />
                 </Button>
 
               </div>
@@ -98,7 +99,6 @@ const Hero = () => {
           <div className="mobile_package"
             style={toggleCalc ? { backgroundImage: "url(/svg/x-circle.svg)" } : {}}
             onClick={() => setToggleCalc((toggleCalc) => !toggleCalc)}>
-
           </div>
 
           <GetPackage toggle={toggleCalc} />

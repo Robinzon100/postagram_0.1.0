@@ -18,7 +18,8 @@ const Offices = () => {
 
             <Cube />
 
-            <h1 className="f-size-h2 f-weight-bl">ოფისები</h1>
+            <h1 className="f-size-h2 f-weight-bl"
+            data-translation='office_title'>ოფისები</h1>
 
           </div>
 

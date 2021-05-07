@@ -35,7 +35,8 @@ const Contact = () => {
 
           <div className="heading">
             <Cube />
-            <h1 className="f-size-h3 f-weight-bl">დაგვიკავშირდით</h1>
+            <h1 className="f-size-h3 f-weight-bl"
+              data-translation='contact_title'>დაგვიკავშირდით</h1>
           </div>
 
           <div className="contact_form">
@@ -62,7 +63,8 @@ const Contact = () => {
 
 
             <div className="message">
-              <p className="f-size-p4 f-weight-bo">შეტყობინება</p>
+              <p
+                className="f-size-p4 f-weight-bo">შეტყობინება</p>
               <Textarea
                 className=""
                 minHeight="10rem"
@@ -75,7 +77,10 @@ const Contact = () => {
 
 
             <Button size="small" width="100%" color="yellow" className="contact_btn" onClick={() => handleSend()}>
-              <p className="f-size-p2 f-weight-bo" style={{ color: "white" }}>გაგზავნა</p>
+              <p
+                className="f-size-p2 f-weight-bo"
+                style={{ color: "white" }}
+                data-translation='contact_button'>გაგზავნა</p>
             </Button>
 
 

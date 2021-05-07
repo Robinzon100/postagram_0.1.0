@@ -12,11 +12,13 @@ const About = () => {
 
               <Cube/>
               
-                <h1 className="f-size-h2 f-weight-bl">ჩვენს შესახებ</h1>
+                <h1 className="f-size-h2 f-weight-bl"
+                 data-translation='about_title'>ჩვენს შესახებ</h1>
               </div>
 
               <div className="paragraph">
-                <p className="f-size-p3 f-weight-l">
+                <p className="f-size-p3 f-weight-l"
+                  data-translation='about_description'>
                   ფოსტაგრამი საფოსტო საკურიერო კომპანიაა, რომლის მიზანია, წლების
                   განმავლობაში დაგროვილი გამოცდილების საფუძველზე, გაუმარტივოს
                   მომხმარებელს ნივთის შეძენისა და მიწოდების პროცესი.
