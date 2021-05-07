@@ -3,11 +3,11 @@ import { ArrowRight } from "react-feather";
 import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic'
 
-// import GetPackage from "components/pages/Index/feature/getPackage";
+// import GetPackage from "components/pages/Index/feature/GetPackage";
 import Button from "components/lib/Button/Button";
 import { Modal } from "@geist-ui/react";
+const GetPackage = dynamic(() => import('components/pages/Index/feature/GetPackage'))
 
-const GetPackage = dynamic(() => import('components/pages/Index/feature/getPackage'))
 
 const Hero = () => {
   const [videoSource, setVideoSource] = useState<string>("");

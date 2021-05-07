@@ -1,10 +1,10 @@
 
-import { GeistProvider, CssBaseline } from "@geist-ui/react";
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
 import "mapbox-gl/dist/mapbox-gl.css"
 
 import "../styles/main.scss";
 import Navigation from "components/global/naviagtion/Navigation";
-import HeadAndMeta from "components/global/head/head"
+import HeadAndMeta from "components/global/head/Head"
 import { useEffect } from 'react';
 import { useCookies } from "react-cookie";
 import { lang } from "components/util/translate.content";

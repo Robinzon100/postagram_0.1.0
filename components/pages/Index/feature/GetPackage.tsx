@@ -8,14 +8,14 @@ import { useCookies } from 'react-cookie';
 
 
 
-const getPackage = ({ toggle }: { toggle: boolean }) => {
+const GetPackage = ({ toggle }: { toggle: boolean }) => {
     const [cost, setCost] = useState<number>(0)
     const [kilogram, setKilogram] = useState<number>(0)
     const [from, setFrom] = useState("");
     const [to, setTo] = useState("");
     const [zoneIndex, setZoneIndex] = useState<number>(0)
 
-    const [cookies, ,] = useCookies(['lang']);
+    const [cookies, setCookie, removeCookie] = useCookies(['lang']);
     let currentLangZone
     let everyEveryZone = []
     switch (cookies.lang) {
@@ -77,7 +77,7 @@ const getPackage = ({ toggle }: { toggle: boolean }) => {
                             value={from}
                             onChange={(value) => {
                                 setFrom(`${value}`)
-                                setTo(`${zones[0][0]}`)
+                                setTo(`${currentLangZone[0][0]}`)
                             }}>
                             {everyEveryZone.map((zone, i) => (
                                 <Select.Option key={i} value={zone}>
@@ -99,7 +99,7 @@ const getPackage = ({ toggle }: { toggle: boolean }) => {
                             value={to}
                             onChange={(value) => {
                                 setTo(`${value}`)
-                                setFrom(`${zones[0][0]}`)
+                                setFrom(`${currentLangZone[0][0]}`)
                             }}>
                             {everyEveryZone.map((zone, i) => (
                                 <Select.Option key={i} value={zone}>
@@ -160,4 +160,4 @@ const getPackage = ({ toggle }: { toggle: boolean }) => {
     );
 };
 
-export default getPackage;
+export default GetPackage;

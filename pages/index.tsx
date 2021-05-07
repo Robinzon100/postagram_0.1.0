@@ -10,12 +10,14 @@ import Service from 'components/pages/Index/services/Service';
 const index = () => {
   return (
     <>
+
       <Hero/>
       <Service/>
       <About/>
       <Offices/>
       {/* <Questions/>  */}
       <Contact/>
+      
     </>
   );
 };
