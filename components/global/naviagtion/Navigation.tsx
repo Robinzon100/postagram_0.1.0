@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Select } from "@geist-ui/react";
+
 import { motion } from "framer-motion";
 
 import { NavigationAnimation } from "components/lib/Motion/NavigationAnimation";
@@ -7,8 +9,10 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const logoClickHandler = () => {
-    scrollTo(0, 0)
-  }
+    scrollTo(0, 0);
+  };
+
+  const handler = (val) => console.log(val);
 
   return (
     <>
@@ -17,7 +21,11 @@ const Navigation = () => {
           <div className="logo" onClick={() => logoClickHandler()} />
 
           <div className="hamburger_container">
-            <ul className={!isOpen ? "menu_none nav_links" : "nav_links menu_block"}>
+            <ul
+              className={
+                !isOpen ? "menu_none nav_links" : "nav_links menu_block"
+              }
+            >
               <li className="nav_items">
                 <a href="#services">სერვისები</a>
               </li>
@@ -35,6 +43,21 @@ const Navigation = () => {
 
               <li className="nav_items">
                 <a href="#contact">კონტაქტი</a>
+              </li>
+
+              <li>
+                <div className="select_lang">
+                  <Select
+                    placeholder="Choose one"
+                    initialValue="geo"
+                    size="medium"
+                    onChange={handler}
+                  >
+                    <Select.Option value="geo">geo</Select.Option>
+                    <Select.Option value="end">eng</Select.Option>
+                    <Select.Option value="rus">rus</Select.Option>
+                  </Select>
+                </div>
               </li>
             </ul>
           </div>
