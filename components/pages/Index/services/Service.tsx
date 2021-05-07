@@ -17,15 +17,19 @@ const Service = () => {
   const [btns, setBtns] = useState([])
 
   useEffect(() => {
-    setText(ServiceText[language].serviceText);
-    setBtns(ServiceText[language].serviceBtnText);
-  }, [])
+    if (cookies.lang) {
+      setText(ServiceText[language].serviceText);
+      setBtns(ServiceText[language].serviceBtnText);
+    }
+  }, [cookies])
 
 
   const getText = (e) => {
     if (e.currentTarget.attributes["data-title"]) {
       const aboutHtml = e.currentTarget.attributes["data-title"].nodeValue;
       const serviceBtns = document.querySelectorAll(".btn");
+      const textContainer = document.querySelector('.services_text') as HTMLDivElement
+      scrollTo(0, window.pageYOffset + textContainer.getBoundingClientRect().top - 100)
 
 
       serviceBtns.forEach(btn => {
@@ -66,7 +70,7 @@ const Service = () => {
                   getText(e);
                   setDefaultText(false);
                 }}>
-                <div className="icon" style={{ backgroundImage: `url("/svg/${i+1}.svg")` }}></div>
+                <div className="icon" style={{ backgroundImage: `url("/svg/${i + 1}.svg")` }}></div>
                 <p className="f-size-p5 f-weight-bl">{btnText}</p>
               </button>
 

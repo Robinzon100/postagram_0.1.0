@@ -15,6 +15,10 @@ export const lang = {
             hero_button: 'search',
             hero_input_placeholder: 'enter tracking number',
 
+            calculator_from: 'from',
+            calculator_where: 'where',
+            calculator_cost: 'cost',
+
             service_title: 'services',
             service_description: 'The main purpose of Postagram is to simplify and improve the delivery process for the partner companies. As such, in case of any additional needs, we are ready to process your request and create a service that adjusts to you.',
 
@@ -42,6 +46,10 @@ export const lang = {
             hero_description: 'Наша команда готова ответить <br/> на любые ваши вопросы.',
             hero_button: 'Поиск',
             hero_input_placeholder: 'введите номер отслеживания',
+
+            calculator_from: 'куда',
+            calculator_where: 'где',
+            calculator_cost: 'Стоимость',
 
             service_title: 'Сервисы',
             service_description: 'Главная цель Postagram-упрощение и усовершенствование сервиса доставки для компаний-партнеров. Соответственно, в случае возникновения любого дополнительного требования, мы готовы обработать ваше требование и создать сервис,  подходящий именно вам.',

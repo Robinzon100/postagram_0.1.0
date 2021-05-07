@@ -2,46 +2,42 @@ import { useState, useEffect } from 'react';
 import { Select } from "@geist-ui/react";
 import { useCookies } from "react-cookie";
 import { lang } from "components/util/translate.content";
+import Router from 'next/router'
+
 
 const Navigation = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['lang']);
   const [isOpen, setIsOpen] = useState(false);
 
 
-  const logoClickHandler = () => {
-    scrollTo(0, 0);
-  };
+
+  const logoClickHandler = () => scrollTo(0, 0);
 
 
 
-  useEffect(() => {
+  const changeHtmlLang = async (choosenLang) => {
+    await setCookie('lang', choosenLang)
+
+    if (choosenLang == 'geo')
+      Router.reload();
 
 
-  }, [])
-
-  const changeHtmlLang = (lang) => {
-    setCookie('lang', lang)
-
-    if (cookies.lang.length > 0 && cookies.lang != 'geo') {
+    await (async () => {
       const translateElements = document.querySelectorAll('[data-translation]')
-
-      Array.from(translateElements).map((el: HTMLElement, i) => {
-        el.innerHTML = lang[cookies.lang].index[el.dataset.translation]
-      })
-
       const translateGlobalElements = document.querySelectorAll('[data-translation-global]')
 
-      Array.from(translateGlobalElements).map((el: HTMLElement, i) => {
-        el.innerHTML = lang[cookies.lang].global.navigation[el.dataset.translationGlobal]
+      Array.from(translateElements).map((el: HTMLElement, i) => {
+        el.innerHTML = lang[choosenLang].index[el.dataset.translation]
       })
-    } 
+      Array.from(translateGlobalElements).map((el: HTMLElement, i) => {
+        el.innerHTML = lang[choosenLang].global.navigation[el.dataset.translationGlobal]
+      })
+    })()
   }
 
 
 
   const handler = (val) => {
-    console.log(val);
-    
     changeHtmlLang(val)
   };
 
@@ -82,10 +78,9 @@ const Navigation = () => {
                 <div className="select_lang">
                   <Select
                     placeholder="Choose one"
-                    initialValue="geo"
+                    initialValue={cookies.lang}
                     size="medium"
-                    onChange={handler}
-                  >
+                    onChange={handler}>
                     <Select.Option value="geo">geo</Select.Option>
                     <Select.Option value="eng">eng</Select.Option>
                     <Select.Option value="rus">rus</Select.Option>

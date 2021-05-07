@@ -29,13 +29,23 @@
         opacity: 0;
       }
 
+      .heading{
+        width: 60rem;
+
+        @media screen and (max-width: $medium-screen) {
+          width: initial !important;
+        }
+      }
+
       .paragraph {
         line-height: 161.2%;
         margin: calc(0.5rem + 0.5vw) 0vw calc(0.3rem + 1.8vw) 0vw;
       }
+      
 
       .hero_input {
-        width: 72%;
+        width: 50%;
+      
 
         @media screen and (max-width: $medium-screen) {
           width: 95%;
