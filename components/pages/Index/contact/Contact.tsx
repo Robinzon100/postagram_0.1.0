@@ -42,12 +42,12 @@ const Contact = () => {
             <div className="name_email">
 
               <div className="name">
-                <p className="f-size-p4 f-weight-bo">სახელი</p>
-                <input type="text" placeholder="სახელი" className="input" value={value.name} onChange={(e) => handleInput(e, "name")} />
+                <p className="f-size-p4 f-weight-bo">Name</p>
+                <input type="text" placeholder="Name" className="input" value={value.name} onChange={(e) => handleInput(e, "name")} />
               </div>
 
               <div className="email">
-                <p className="f-size-p4 f-weight-bo">ელექტრონული ფოსტა</p>
+                <p className="f-size-p4 f-weight-bo">Email</p>
 
                 <input
                   type="text"
@@ -62,14 +62,14 @@ const Contact = () => {
 
 
             <div className="message">
-              <p className="f-size-p4 f-weight-bo">შეტყობინება</p>
+              <p className="f-size-p4 f-weight-bo">Message</p>
               <Textarea
                 className=""
                 minHeight="10rem"
                 width="100%"
                 value={value.message}
                 onChange={(e) => handleInput(e, "message")}
-                placeholder="დაწერეთ აქ"
+                placeholder="Message"
               />
             </div>
 
