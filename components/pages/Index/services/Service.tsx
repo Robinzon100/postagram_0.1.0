@@ -12,7 +12,7 @@ const Service = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['lang']);
   const [defaultText, setDefaultText] = useState(true);
   const [displayText, setDisplayText] = useState("");
-  const language = cookies.lang
+  let language = cookies.lang
   const [text, setText] = useState([])
   const [btns, setBtns] = useState([])
 
@@ -21,6 +21,14 @@ const Service = () => {
       setText(ServiceText[language].serviceText);
       setBtns(ServiceText[language].serviceBtnText);
     }
+
+    if(!cookies.lang) {
+        setCookie("lang","geo")
+        language = "geo"
+        setText(ServiceText[language].serviceText);
+        setBtns(ServiceText[language].serviceBtnText);
+    }
+
   }, [cookies])
 
 
