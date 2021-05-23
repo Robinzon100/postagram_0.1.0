@@ -78,7 +78,7 @@ const Navigation = () => {
                 <div className="select_lang">
                   <Select
                     placeholder="Choose Language"
-                    initialValue={cookies.lang}
+                    initialValue="geo"
                     size="medium"
                     onChange={handler}>
                     <Select.Option value="geo">geo</Select.Option>
