@@ -77,7 +77,7 @@ const Navigation = () => {
               <li>
                 <div className="select_lang">
                   <Select
-                    placeholder="Choose one"
+                    placeholder="Choose Language"
                     initialValue={cookies.lang}
                     size="medium"
                     onChange={handler}>
