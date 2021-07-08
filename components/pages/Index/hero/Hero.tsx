@@ -21,7 +21,7 @@ const Hero = () => {
     if (window.innerWidth > 1080) {
       setVideoSource("/videos/animation.mp4")
     } else {
-      setVideoSource("/videos/for_mobile.mp4")
+      setVideoSource("/videos/for_mobile1.mp4")
     }
   }, [])
 
