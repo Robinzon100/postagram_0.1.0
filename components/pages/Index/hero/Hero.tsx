@@ -19,9 +19,9 @@ const Hero = () => {
 
   useEffect(() => {
     if (window.innerWidth > 1080) {
-      setVideoSource("https://oxeni-sfs.vercel.app/postagram/videos/animation.mp4")
+      setVideoSource("/videos/animation.mp4")
     } else {
-      setVideoSource("https://oxeni-sfs.vercel.app/postagram/videos/for_mobile.mp4")
+      setVideoSource("/videos/for_mobile.mp4")
     }
   }, [])
 
